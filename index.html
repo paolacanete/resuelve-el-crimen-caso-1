@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Caso 1 â€” Asesinato en Hollywood</title>
+<title>Caso 1 — Asesinato en Hollywood</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap" rel="stylesheet" />
@@ -247,7 +247,7 @@ img{display:block;max-width:100%;}
   color:var(--ink-faint);transition:all .2s;position:relative;}
 .clue-chip:hover{border-color:var(--gold);color:var(--gold-bright);}
 .clue-chip.read{color:var(--ink);border-color:var(--line);}
-.clue-chip.read::after{content:"âœ“";position:absolute;top:-6px;right:-6px;font-size:.6rem;color:var(--gold);background:var(--bg);border-radius:50%;width:14px;height:14px;display:grid;place-items:center;}
+.clue-chip.read::after{content:"✓";position:absolute;top:-6px;right:-6px;font-size:.6rem;color:var(--gold);background:var(--bg);border-radius:50%;width:14px;height:14px;display:grid;place-items:center;}
 .clue-chip.active{border-color:var(--gold);color:var(--gold-bright);background:rgba(200,164,77,.1);box-shadow:0 0 18px rgba(200,164,77,.2);}
 .clue-stage{display:flex;align-items:center;gap:1.2rem;justify-content:center;}
 .clue-nav{width:54px;height:54px;border:1px solid var(--line-soft);border-radius:50%;font-size:1.8rem;color:var(--ink-dim);
@@ -272,7 +272,7 @@ img{display:block;max-width:100%;}
 .clue-progress{text-align:center;font-family:var(--type);font-size:.72rem;letter-spacing:.18em;color:var(--ink-faint);text-transform:uppercase;margin-top:1.4rem;}
 @keyframes typeIn{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:none}}
 
-/* ================= DEDUCCIÃ“N ================= */
+/* ================= DEDUCCIÓN ================= */
 .grids{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;}
 .grid-panel{background:linear-gradient(180deg,var(--panel),#0e0e13);border:1px solid var(--line-soft);border-radius:3px;padding:1.4rem;box-shadow:0 10px 30px rgba(0,0,0,.4);}
 .logic-grid .lg-title{font-family:var(--display);font-size:1.05rem;letter-spacing:.08em;color:var(--gold-bright);text-align:center;margin-bottom:1.1rem;text-transform:uppercase;}
@@ -451,7 +451,7 @@ img{display:block;max-width:100%;}
 <div id="root"></div>
 
 <script>
-/* NoirAudio â€” synthesized noir ambience (rain + brooding jazz drone + UI ticks).
+/* NoirAudio — synthesized noir ambience (rain + brooding jazz drone + UI ticks).
    No audio files. Everything is generated live with the Web Audio API.
    Must be started from a user gesture (browser autoplay policy). */
 (function () {
@@ -1018,7 +1018,7 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
 </script>
 <script type="text/plain" id="__gamecode">
 /* ===== game-data ===== */
-/* Game data for Caso 1 â€” Asesinato en Hollywood */
+/* Game data for Caso 1 — Asesinato en Hollywood */
 const SUSPECTS = [{
   id: "aureolina",
   name: "La Asombrosa Aureolina",
@@ -1026,12 +1026,12 @@ const SUSPECTS = [{
   role: "Maga ilusionista",
   img: "assets/sospechosos/aureolina.png",
   accent: "#7a2230",
-  tag: "IlusiÃ³n, engaÃ±oâ€¦ Â¿o asesinato?",
-  desc: "Su mayor truco es hacerte creer que no hay truco. Nada es lo que parece cuando Aureolina estÃ¡ en escena.",
+  tag: "Ilusión, engaño… ¿o asesinato?",
+  desc: "Su mayor truco es hacerte creer que no hay truco. Nada es lo que parece cuando Aureolina está en escena.",
   stats: {
     Edad: "34",
     Altura: "1,70 m",
-    "Mano hÃ¡bil": "Zurda",
+    "Mano hábil": "Zurda",
     Ojos: "Verdes",
     Cabello: "Rubio dorado"
   }
@@ -1047,9 +1047,9 @@ const SUSPECTS = [{
   stats: {
     Edad: "34",
     Altura: "1,70 m",
-    "Mano hÃ¡bil": "Diestro",
-    Ojos: "CafÃ© oscuro",
-    Cabello: "CastaÃ±o oscuro"
+    "Mano hábil": "Diestro",
+    Ojos: "Café oscuro",
+    Cabello: "Castaño oscuro"
   }
 }, {
   id: "obsidiana",
@@ -1058,61 +1058,61 @@ const SUSPECTS = [{
   role: "Escritora de novela criminal",
   img: "assets/sospechosos/obsidiana.png",
   accent: "#3a2d4a",
-  tag: "La verdad es la trama mÃ¡s peligrosa.",
-  desc: "Autora de bestsellers de crÃ­menes perfectos. Sus historias siempre terminan con sangre. A veces, la tinta no es suficiente.",
+  tag: "La verdad es la trama más peligrosa.",
+  desc: "Autora de bestsellers de crímenes perfectos. Sus historias siempre terminan con sangre. A veces, la tinta no es suficiente.",
   stats: {
     Edad: "38",
     Altura: "1,70 m",
-    "Mano hÃ¡bil": "Zurda",
+    "Mano hábil": "Zurda",
     Ojos: "Verdes",
     Cabello: "Negro azabache"
   }
 }];
 const WEAPONS = [{
   id: "tenedor",
-  name: "Tenedor metÃ¡lico",
+  name: "Tenedor metálico",
   short: "Tenedor",
   img: "assets/armas/tenedor.png",
-  tag: "Evidencia Â· Armas Murdle No. 04",
+  tag: "Evidencia · Armas Murdle No. 04",
   desc: "Tenedor de plata de la cena de gala. Restos oscuros secos entre los dientes."
 }, {
   id: "tubo",
   name: "Tubo de aluminio",
   short: "Tubo",
   img: "assets/armas/tubo.png",
-  tag: "Evidencia Â· Caso 1",
+  tag: "Evidencia · Caso 1",
   desc: "Tubo industrial abollado por el uso. Salpicaduras en un extremo, atado con cordel del lugar."
 }, {
   id: "vela",
   name: "Vela gruesa",
   short: "Vela",
   img: "assets/armas/vela.png",
-  tag: "Evidencia #04 Â· Vela gruesa derretida",
-  desc: "Vela de cera roja, pesada como un mazo. La llama nunca llegÃ³ a apagarse."
+  tag: "Evidencia #04 · Vela gruesa derretida",
+  desc: "Vela de cera roja, pesada como un mazo. La llama nunca llegó a apagarse."
 }];
 const PLACES = [{
   id: "bano",
-  name: "El cuarto de baÃ±o gigante",
-  short: "BaÃ±o",
+  name: "El cuarto de baño gigante",
+  short: "Baño",
   img: "assets/lugares/bano.png",
-  tag: "LÃ­nea de policÃ­a Â· No pasar",
-  desc: "MÃ¡rmol, espejos enfrentados y una baÃ±era donde el agua aÃºn no se enfrÃ­a. Marcador de evidencia No. 5 sobre el suelo mojado."
+  tag: "Línea de policía · No pasar",
+  desc: "Mármol, espejos enfrentados y una bañera donde el agua aún no se enfría. Marcador de evidencia No. 5 sobre el suelo mojado."
 }, {
   id: "dormitorio",
   name: "El dormitorio",
   short: "Dormitorio",
   img: "assets/lugares/dormitorio.png",
-  tag: "Hollywood Hills Â· 02:13 AM",
+  tag: "Hollywood Hills · 02:13 AM",
   desc: "Cama intacta, ventanal sobre la ciudad encendida. Un reloj de oro y una foto cayeron al suelo."
 }, {
   id: "proyeccion",
-  name: "La sala de proyecciÃ³n",
-  short: "ProyecciÃ³n",
+  name: "La sala de proyección",
+  short: "Proyección",
   img: "assets/lugares/proyeccion.png",
-  tag: "LÃ­nea de policÃ­a Â· No pasar",
-  desc: "Butacas de terciopelo rojo y la pantalla en negro. Alguien estuvo escondido aquÃ­, entre las filas."
+  tag: "Línea de policía · No pasar",
+  desc: "Butacas de terciopelo rojo y la pantalla en negro. Alguien estuvo escondido aquí, entre las filas."
 }];
-const CLUES = ["La Asombrosa Aureolina confiaba en el sospechoso que llevaba un tenedor.", "Midnight Tercero seguÃ­a blandiendo un tubo de aluminio cuando llegÃ³ LÃ³gico.", "En el dormitorio no habÃ­a ninguna vela gruesa.", "A la Dama Obsidiana la encontraron escondida debajo de unos sillones de terciopelo rojo.", "El cadÃ¡ver estaba dentro de una baÃ±era de mÃ¡rmol."];
+const CLUES = ["La Asombrosa Aureolina confiaba en el sospechoso que llevaba un tenedor.", "Midnight Tercero seguía blandiendo un tubo de aluminio cuando llegó Lógico.", "En el dormitorio no había ninguna vela gruesa.", "A la Dama Obsidiana la encontraron escondida debajo de unos sillones de terciopelo rojo.", "El cadáver estaba dentro de una bañera de mármol."];
 const SOLUTION = {
   who: "aureolina",
   weapon: "vela",
@@ -1120,9 +1120,9 @@ const SOLUTION = {
 };
 
 // Progressive deduction hints (revealed one at a time)
-const HINTS = ["Empieza por lo seguro. La pista 2 dice que Midnight seguÃ­a empuÃ±ando el tubo de aluminio: marca âœ“ en Midnight â€” Tubo.", "Si Midnight tiene el tubo, ninguna otra sospechosa lo tiene, y Midnight no tiene ni el tenedor ni la vela. (El tablero lo marca solo.)", "Pista 1: Aureolina confiaba en quien llevaba el tenedorâ€¦ no se confÃ­a a sÃ­ misma. Aureolina NO tiene el tenedor.", "Solo queda una dueÃ±a posible para el tenedor: la Dama Obsidiana. Y a Aureolina le queda la vela gruesa.", "Pista 4: a Obsidiana la hallaron bajo butacas de terciopelo rojo â†’ estaba en la Sala de proyecciÃ³n.", "Pista 5: el cadÃ¡ver apareciÃ³ en la baÃ±era de mÃ¡rmol â†’ el crimen ocurriÃ³ en el Cuarto de baÃ±o.", "Pista 3: la vela no estaba en el dormitorio. Aureolina tiene la vela, asÃ­ que Aureolina no estaba en el dormitorioâ€¦ estaba en el baÃ±o. Midnight queda en el dormitorio.", "El asesino es quien estaba en el baÃ±o con el cadÃ¡ver: Aureolina, con la vela gruesa, en el cuarto de baÃ±o gigante."];
-const EPILOGUE_WIN = "Aureolina sonrÃ­e, como ante un pÃºblico que por fin descubre el truco. La vela seguÃ­a encendida cuando LÃ³gico levantÃ³ la tapa de mÃ¡rmol. â€œEl mejor trucoâ€, susurra mientras le colocan las esposas, â€œes hacer creer que no hay asesino.â€ TelÃ³n.";
-const EPILOGUE_LOSE = "Las luces de la mansiÃ³n se apagan una a una. La acusaciÃ³n no encaja con las pruebas, y el verdadero culpable se pierde entre los invitados. El caso sigue abiertoâ€¦ vuelve a revisar el expediente, Detective.";
+const HINTS = ["Empieza por lo seguro. La pista 2 dice que Midnight seguía empuñando el tubo de aluminio: marca ✓ en Midnight — Tubo.", "Si Midnight tiene el tubo, ninguna otra sospechosa lo tiene, y Midnight no tiene ni el tenedor ni la vela. (El tablero lo marca solo.)", "Pista 1: Aureolina confiaba en quien llevaba el tenedor… no se confía a sí misma. Aureolina NO tiene el tenedor.", "Solo queda una dueña posible para el tenedor: la Dama Obsidiana. Y a Aureolina le queda la vela gruesa.", "Pista 4: a Obsidiana la hallaron bajo butacas de terciopelo rojo → estaba en la Sala de proyección.", "Pista 5: el cadáver apareció en la bañera de mármol → el crimen ocurrió en el Cuarto de baño.", "Pista 3: la vela no estaba en el dormitorio. Aureolina tiene la vela, así que Aureolina no estaba en el dormitorio… estaba en el baño. Midnight queda en el dormitorio.", "El asesino es quien estaba en el baño con el cadáver: Aureolina, con la vela gruesa, en el cuarto de baño gigante."];
+const EPILOGUE_WIN = "Aureolina sonríe, como ante un público que por fin descubre el truco. La vela seguía encendida cuando Lógico levantó la tapa de mármol. “El mejor truco”, susurra mientras le colocan las esposas, “es hacer creer que no hay asesino.” Telón.";
+const EPILOGUE_LOSE = "Las luces de la mansión se apagan una a una. La acusación no encaja con las pruebas, y el verdadero culpable se pierde entre los invitados. El caso sigue abierto… vuelve a revisar el expediente, Detective.";
 Object.assign(window, {
   SUSPECTS,
   WEAPONS,
@@ -1314,7 +1314,7 @@ function Stepper({
     n: "II"
   }, {
     id: "deduccion",
-    label: "DeducciÃ³n",
+    label: "Deducción",
     n: "III"
   }, {
     id: "veredicto",
@@ -1357,7 +1357,7 @@ Object.assign(window, {
 });
 
 /* ===== intro ===== */
-/* Intro â€” cinematic video (limpio, sin texto sobrepuesto) */
+/* Intro — cinematic video (limpio, sin texto sobrepuesto) */
 function Intro({
   onEnter
 }) {
@@ -1437,7 +1437,7 @@ Object.assign(window, {
 });
 
 /* ===== expediente ===== */
-/* Expediente â€” suspects, weapons, places with zoom + marking */
+/* Expediente — suspects, weapons, places with zoom + marking */
 function Expediente({
   notes,
   setNote,
@@ -1531,7 +1531,7 @@ function Expediente({
     }, /*#__PURE__*/React.createElement("dt", null, k), /*#__PURE__*/React.createElement("dd", null, v)))), /*#__PURE__*/React.createElement("button", {
       className: "flag-btn " + (note || ""),
       onClick: () => cycleNote(s.id)
-    }, note === null && "âŠ˜ Marcar sospechoso", note === "sospechoso" && "â— Sospechoso â€” descartar", note === "descartado" && "âœ• Descartado â€” limpiar")));
+    }, note === null && "⊘ Marcar sospechoso", note === "sospechoso" && "● Sospechoso — descartar", note === "descartado" && "✕ Descartado — limpiar")));
   })), tab === "armas" && /*#__PURE__*/React.createElement("div", {
     className: "grid wide"
   }, WEAPONS.map(w => /*#__PURE__*/React.createElement(Corners, {
@@ -1609,7 +1609,7 @@ Object.assign(window, {
 });
 
 /* ===== pistas ===== */
-/* Pistas â€” case-file clues revealed one by one */
+/* Pistas — case-file clues revealed one by one */
 function Pistas({
   read,
   markRead,
@@ -1670,7 +1670,7 @@ function Pistas({
     className: "cc-file"
   }, "Caso 1 \u2014 Asesinato en Hollywood"), /*#__PURE__*/React.createElement("span", {
     className: "cc-read"
-  }, read.includes(idx) ? "âœ“ LeÃ­da" : "Sin leer"))), /*#__PURE__*/React.createElement("button", {
+  }, read.includes(idx) ? "✓ Leída" : "Sin leer"))), /*#__PURE__*/React.createElement("button", {
     className: "clue-nav next",
     onClick: () => go(idx + 1),
     disabled: idx === CLUES.length - 1
@@ -1694,7 +1694,7 @@ Object.assign(window, {
 });
 
 /* ===== deduccion ===== */
-/* DeducciÃ³n â€” Murdle-style logic grids with auto-X, clues drawer, hints */
+/* Deducción — Murdle-style logic grids with auto-X, clues drawer, hints */
 function computeAuto(marks, items) {
   const auto = {};
   for (const s of SUSPECTS) {
@@ -1827,7 +1827,7 @@ function Deduccion({
       showHint();
     },
     disabled: hintsShown >= HINTS.length
-  }, "\uD83D\uDD0D ", hintsShown === 0 ? "Pedir una pista de deducciÃ³n" : hintsShown >= HINTS.length ? "Sin mÃ¡s pistas" : "Otra pista de deducciÃ³n")), drawer && /*#__PURE__*/React.createElement("div", {
+  }, "\uD83D\uDD0D ", hintsShown === 0 ? "Pedir una pista de deducción" : hintsShown >= HINTS.length ? "Sin más pistas" : "Otra pista de deducción")), drawer && /*#__PURE__*/React.createElement("div", {
     className: "clue-drawer"
   }, CLUES.map((c, i) => /*#__PURE__*/React.createElement("div", {
     className: "cd-item",
@@ -1857,7 +1857,7 @@ Object.assign(window, {
 });
 
 /* ===== veredicto ===== */
-/* Veredicto â€” final accusation + cinematic result */
+/* Veredicto — final accusation + cinematic result */
 function Veredicto({
   initial,
   onWin,
@@ -1960,7 +1960,7 @@ function Veredicto({
     className: "vds-text"
   }, whoObj ? /*#__PURE__*/React.createElement("b", null, whoObj.short) : /*#__PURE__*/React.createElement("span", {
     className: "ph"
-  }, "\xBFqui\xE9n?"), " cometiÃ³ el crimen con ", weaponObj ? /*#__PURE__*/React.createElement("b", null, weaponObj.short.toLowerCase()) : /*#__PURE__*/React.createElement("span", {
+  }, "\xBFqui\xE9n?"), " cometió el crimen con ", weaponObj ? /*#__PURE__*/React.createElement("b", null, weaponObj.short.toLowerCase()) : /*#__PURE__*/React.createElement("span", {
     className: "ph"
   }, "\xBFqu\xE9 arma?"), " en ", placeObj ? /*#__PURE__*/React.createElement("b", null, placeObj.short.toLowerCase()) : /*#__PURE__*/React.createElement("span", {
     className: "ph"
@@ -2057,7 +2057,7 @@ Object.assign(window, {
 });
 
 /* ===== app ===== */
-/* App shell â€” phase state machine, persistence, top bar */
+/* App shell — phase state machine, persistence, top bar */
 const STORE_KEY = "hollywood_caso1_v1";
 function loadState() {
   try {
@@ -2228,7 +2228,7 @@ function App() {
     className: "icon-btn " + (muted ? "off" : ""),
     onClick: toggleMute,
     title: muted ? "Activar sonido" : "Silenciar"
-  }, muted ? "ðŸ”‡" : "ðŸ”Š"), /*#__PURE__*/React.createElement("button", {
+  }, muted ? "🔇" : "🔊"), /*#__PURE__*/React.createElement("button", {
     className: "icon-btn",
     onClick: restart,
     title: "Reiniciar caso"
