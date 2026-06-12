@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Caso 1 — Asesinato en Hollywood</title>
+<title>Resuelve el crimen — Detective Lógico</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap" rel="stylesheet" />
@@ -422,6 +422,19 @@ img{display:block;max-width:100%;}
 .login-error.show{opacity:1;animation:shake .35s ease;}
 .login-foot{margin-top:1.6rem;font-family:var(--type);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);}
 @keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+
+/* ===== case select ===== */
+.case-select{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:3rem 1.2rem;text-align:center;animation:fadeUp .6s ease both;position:relative;z-index:5;}
+.cs-kicker{letter-spacing:.4em;font-size:.72rem;color:var(--gold,#c9a35c);opacity:.85;margin-bottom:1rem;font-family:'Special Elite',monospace;}
+.cs-title{font-family:'Cinzel',serif;font-weight:800;font-size:clamp(1.9rem,5vw,3.2rem);letter-spacing:.08em;margin:0 0 1.2rem;color:var(--ink,#efe6d4);}
+.cs-grid{display:grid;grid-template-columns:repeat(2,minmax(270px,380px));gap:1.8rem;margin-top:2.2rem;}
+@media (max-width:760px){.cs-grid{grid-template-columns:minmax(260px,380px);}}
+.cs-card{padding:2.2rem 1.7rem;display:flex;flex-direction:column;align-items:center;gap:.95rem;background:rgba(8,6,4,.55);}
+.cs-num{letter-spacing:.34em;font-size:.78rem;color:var(--gold,#c9a35c);font-family:'Special Elite',monospace;}
+.cs-name{font-family:'Cinzel',serif;font-weight:700;font-size:1.35rem;letter-spacing:.07em;color:var(--ink,#efe6d4);}
+.cs-sub{font-size:.92rem;opacity:.78;line-height:1.55;min-height:4.4em;margin:0;}
+.cs-progress{font-size:.68rem;letter-spacing:.22em;color:var(--gold,#c9a35c);opacity:.75;font-family:'Special Elite',monospace;}
 
 </style>
 </head>
@@ -1019,7 +1032,7 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
 <script type="text/plain" id="__gamecode">
 /* ===== game-data ===== */
 /* Game data for Caso 1 — Asesinato en Hollywood */
-const SUSPECTS = [{
+let SUSPECTS = [{
   id: "aureolina",
   name: "La Asombrosa Aureolina",
   short: "Aureolina",
@@ -1068,7 +1081,7 @@ const SUSPECTS = [{
     Cabello: "Negro azabache"
   }
 }];
-const WEAPONS = [{
+let WEAPONS = [{
   id: "tenedor",
   name: "Tenedor metálico",
   short: "Tenedor",
@@ -1090,7 +1103,7 @@ const WEAPONS = [{
   tag: "Evidencia #04 · Vela gruesa derretida",
   desc: "Vela de cera roja, pesada como un mazo. La llama nunca llegó a apagarse."
 }];
-const PLACES = [{
+let PLACES = [{
   id: "bano",
   name: "El cuarto de baño gigante",
   short: "Baño",
@@ -1112,17 +1125,17 @@ const PLACES = [{
   tag: "Línea de policía · No pasar",
   desc: "Butacas de terciopelo rojo y la pantalla en negro. Alguien estuvo escondido aquí, entre las filas."
 }];
-const CLUES = ["La Asombrosa Aureolina confiaba en el sospechoso que llevaba un tenedor.", "Midnight Tercero seguía blandiendo un tubo de aluminio cuando llegó Lógico.", "En el dormitorio no había ninguna vela gruesa.", "A la Dama Obsidiana la encontraron escondida debajo de unos sillones de terciopelo rojo.", "El cadáver estaba dentro de una bañera de mármol."];
-const SOLUTION = {
+let CLUES = ["La Asombrosa Aureolina confiaba en el sospechoso que llevaba un tenedor.", "Midnight Tercero seguía blandiendo un tubo de aluminio cuando llegó Lógico.", "En el dormitorio no había ninguna vela gruesa.", "A la Dama Obsidiana la encontraron escondida debajo de unos sillones de terciopelo rojo.", "El cadáver estaba dentro de una bañera de mármol."];
+let SOLUTION = {
   who: "aureolina",
   weapon: "vela",
   place: "bano"
 };
 
 // Progressive deduction hints (revealed one at a time)
-const HINTS = ["Empieza por lo seguro. La pista 2 dice que Midnight seguía empuñando el tubo de aluminio: marca ✓ en Midnight — Tubo.", "Si Midnight tiene el tubo, ninguna otra sospechosa lo tiene, y Midnight no tiene ni el tenedor ni la vela. (El tablero lo marca solo.)", "Pista 1: Aureolina confiaba en quien llevaba el tenedor… no se confía a sí misma. Aureolina NO tiene el tenedor.", "Solo queda una dueña posible para el tenedor: la Dama Obsidiana. Y a Aureolina le queda la vela gruesa.", "Pista 4: a Obsidiana la hallaron bajo butacas de terciopelo rojo → estaba en la Sala de proyección.", "Pista 5: el cadáver apareció en la bañera de mármol → el crimen ocurrió en el Cuarto de baño.", "Pista 3: la vela no estaba en el dormitorio. Aureolina tiene la vela, así que Aureolina no estaba en el dormitorio… estaba en el baño. Midnight queda en el dormitorio.", "El asesino es quien estaba en el baño con el cadáver: Aureolina, con la vela gruesa, en el cuarto de baño gigante."];
-const EPILOGUE_WIN = "Aureolina sonríe, como ante un público que por fin descubre el truco. La vela seguía encendida cuando Lógico levantó la tapa de mármol. “El mejor truco”, susurra mientras le colocan las esposas, “es hacer creer que no hay asesino.” Telón.";
-const EPILOGUE_LOSE = "Las luces de la mansión se apagan una a una. La acusación no encaja con las pruebas, y el verdadero culpable se pierde entre los invitados. El caso sigue abierto… vuelve a revisar el expediente, Detective.";
+let HINTS = ["Empieza por lo seguro. La pista 2 dice que Midnight seguía empuñando el tubo de aluminio: marca ✓ en Midnight — Tubo.", "Si Midnight tiene el tubo, ninguna otra sospechosa lo tiene, y Midnight no tiene ni el tenedor ni la vela. (El tablero lo marca solo.)", "Pista 1: Aureolina confiaba en quien llevaba el tenedor… no se confía a sí misma. Aureolina NO tiene el tenedor.", "Solo queda una dueña posible para el tenedor: la Dama Obsidiana. Y a Aureolina le queda la vela gruesa.", "Pista 4: a Obsidiana la hallaron bajo butacas de terciopelo rojo → estaba en la Sala de proyección.", "Pista 5: el cadáver apareció en la bañera de mármol → el crimen ocurrió en el Cuarto de baño.", "Pista 3: la vela no estaba en el dormitorio. Aureolina tiene la vela, así que Aureolina no estaba en el dormitorio… estaba en el baño. Midnight queda en el dormitorio.", "El asesino es quien estaba en el baño con el cadáver: Aureolina, con la vela gruesa, en el cuarto de baño gigante."];
+let EPILOGUE_WIN = "Aureolina sonríe, como ante un público que por fin descubre el truco. La vela seguía encendida cuando Lógico levantó la tapa de mármol. “El mejor truco”, susurra mientras le colocan las esposas, “es hacer creer que no hay asesino.” Telón.";
+let EPILOGUE_LOSE = "Las luces de la mansión se apagan una a una. La acusación no encaja con las pruebas, y el verdadero culpable se pierde entre los invitados. El caso sigue abierto… vuelve a revisar el expediente, Detective.";
 Object.assign(window, {
   SUSPECTS,
   WEAPONS,
@@ -1133,6 +1146,145 @@ Object.assign(window, {
   EPILOGUE_WIN,
   EPILOGUE_LOSE
 });
+
+/* ===== multi-case ===== */
+const CASE1_META = {
+  id: "caso1",
+  num: "CASO 1",
+  titleA: "ASESINATO",
+  titleB: "EN HOLLYWOOD",
+  topbar: "CASO 1 · ASESINATO EN HOLLYWOOD",
+  label: "Caso 1 — Asesinato en Hollywood",
+  sub: "Una cena privada. Un invitado de honor. Un cuerpo en la bañera de mármol.",
+  scope: "de la mansión",
+  video: "assets/intro/intro.mp4",
+  storeKey: "hollywood_caso1_v1",
+  suspects: SUSPECTS, weapons: WEAPONS, places: PLACES,
+  clues: CLUES, solution: SOLUTION, hints: HINTS,
+  win: EPILOGUE_WIN, lose: EPILOGUE_LOSE
+};
+const CASE2_META = {
+  id: "caso2",
+  num: "CASO 2",
+  titleA: "Y LUEGO",
+  titleB: "HUBO OTRO",
+  topbar: "CASO 2 · Y LUEGO HUBO OTRO",
+  label: "Caso 2 — Y luego hubo otro",
+  sub: "Una isla solitaria. Un anciano asesinado. Tres forasteros que nunca debieron desembarcar.",
+  scope: "de la isla",
+  video: "assets/caso2/intro/intro2.mp4",
+  storeKey: "isla_caso2_v1",
+  suspects: [{
+    id: "esmeraldo",
+    name: "Signor Esmeraldo",
+    short: "Esmeraldo",
+    role: "Joyero de renombre mundial",
+    img: "assets/caso2/sospechosos/esmeraldo.png",
+    accent: "#1f5e45",
+    tag: "Toda piedra preciosa esconde una historia turbia.",
+    desc: "Joyero italiano de gran renombre. Ha recorrido el mundo buscando piedras preciosas raras… que siempre se le caen de los bolsillos. Su empresa familiar fabricó la lupa del propio Detective Lógico.",
+    stats: { Altura: "1,77 m", "Mano hábil": "Zurdo", Ojos: "Café claro", Cabello: "Negro" }
+  }, {
+    id: "mango",
+    name: "Padre Mango",
+    short: "Mango",
+    role: "Sacerdote… de vacaciones",
+    img: "assets/caso2/sospechosos/mango.png",
+    accent: "#6b4a2a",
+    tag: "Reza por ti. Y también por él.",
+    desc: "Hizo votos de pobreza, pero conduce un BMW. Hizo votos de obediencia, pero tiene veinticinco criados. También hizo votos de castidad, y por eso mismo está de vacaciones.",
+    stats: { Altura: "1,55 m", "Mano hábil": "Zurdo", Ojos: "Café oscuro", Cabello: "Calvo" }
+  }, {
+    id: "azafran",
+    name: "Señorita Azafrán",
+    short: "Azafrán",
+    role: "Encantadora profesional",
+    img: "assets/caso2/sospechosos/azafran.png",
+    accent: "#7a5a20",
+    tag: "¿Inocente, o es lo que quiere que creas?",
+    desc: "Guapa y encantadora, pero quizá no del todo inteligente. O tal vez es lo que quiere que creas. O a lo mejor quiere que creas que eso es lo que quiere que creas.",
+    stats: { Altura: "1,58 m", "Mano hábil": "Zurda", Ojos: "Cafés", Cabello: "Rubia" }
+  }],
+  weapons: [{
+    id: "trampa",
+    name: "Una trampa para osos",
+    short: "Trampa",
+    img: "assets/caso2/armas/trampa.png",
+    tag: "Evidencia · Caso 2 · Pesado",
+    desc: "Si crees que es demasiado horripilante para usarla con una persona, ¡imagínate cómo se siente un oso!"
+  }, {
+    id: "ladrillo",
+    name: "Un ladrillo",
+    short: "Ladrillo",
+    img: "assets/caso2/armas/ladrillo.png",
+    tag: "Evidencia · Caso 2 · Peso medio",
+    desc: "Solo un ladrillo normal y corriente. Nada especial. Un ladrillo."
+  }, {
+    id: "arpon",
+    name: "Un arpón",
+    short: "Arpón",
+    img: "assets/caso2/armas/arpon.png",
+    tag: "Evidencia · Caso 2 · Pesado",
+    desc: "Con esto puedes matar a un pez. Aunque, bien pensado, con esto podrías matar a cualquiera."
+  }],
+  places: [{
+    id: "acantilados",
+    name: "Los acantilados",
+    short: "Acantilados",
+    img: "assets/caso2/lugares/acantilados.png",
+    tag: "Exterior · La isla",
+    desc: "Una caída larga, pero tal vez las rocas afiladas amortigüen tu caída."
+  }, {
+    id: "ruinas",
+    name: "Las antiguas ruinas",
+    short: "Ruinas",
+    img: "assets/caso2/lugares/ruinas.png",
+    tag: "Exterior · La isla",
+    desc: "Algunas viejas piedras erguidas con extraños glifos grabados en ellas."
+  }, {
+    id: "muelles",
+    name: "Los muelles",
+    short: "Muelles",
+    img: "assets/caso2/lugares/muelles.png",
+    tag: "Exterior · La isla",
+    desc: "Unos muelles viejos y podridos que sin duda han visto mejores tiempos. ¡Cuidado con los tiburones!"
+  }],
+  clues: [
+    "El sospechoso con un ladrillo era un feligrés del Padre Mango.",
+    "La Señorita Azafrán llevaba una trampa para osos en el bolso.",
+    "El sospechoso cuya empresa familiar fabricó la lupa de Lógico estaba en los acantilados.",
+    "Las antiguas ruinas parecían hipnotizar los ojos cafés del sospechoso que estaba junto a ellas.",
+    "Cuando Lógico llegó, el cadáver del anciano había sido mordisqueado por los tiburones."
+  ],
+  solution: { who: "mango", weapon: "arpon", place: "muelles" },
+  hints: [
+    "Empieza por lo seguro. La pista 2 dice que la Señorita Azafrán llevaba la trampa para osos en el bolso: marca ✓ en Azafrán — Trampa.",
+    "Si Azafrán tiene la trampa, nadie más la tiene, y Azafrán no tiene ni el ladrillo ni el arpón. (El tablero lo marca solo.)",
+    "Pista 1: el del ladrillo era un feligrés del Padre Mango… y Mango no es feligrés de sí mismo. Mango NO tiene el ladrillo.",
+    "Solo queda un dueño posible para el ladrillo: el Signor Esmeraldo. Y al Padre Mango le queda el arpón.",
+    "Pista 3: la lupa de Lógico la fabricó la empresa familiar de Esmeraldo (Industrias Esmeraldo) → Esmeraldo estaba en los acantilados.",
+    "Pista 4: las ruinas hipnotizaban unos ojos cafés. De los que quedan, la Señorita Azafrán es quien tiene ojos cafés (los del Padre Mango son café oscuro) → Azafrán estaba en las antiguas ruinas.",
+    "Solo queda un lugar libre para el Padre Mango: los muelles. Y la pista 5 dice que los tiburones mordisquearon el cadáver → el crimen ocurrió en los muelles.",
+    "El asesino es quien estaba en los muelles con el cadáver: el Padre Mango, con el arpón, en los muelles."
+  ],
+  win: "El Padre Mango deja el arpón sobre las tablas podridas del muelle y se persigna. “Hice votos de pobreza”, murmura mientras las gaviotas gritan, “pero nunca de inocencia.” Bajo el agua, los tiburones siguen esperando. Caso cerrado, Detective.",
+  lose: "La marea sube y borra las últimas huellas del muelle. La acusación no encaja con las pruebas, y el verdadero culpable zarpa con la última barca. El caso sigue abierto… vuelve a revisar el expediente, Detective."
+};
+const CASES = { caso1: CASE1_META, caso2: CASE2_META };
+let CASE = CASE1_META;
+function applyCase(id) {
+  CASE = CASES[id] || CASE1_META;
+  SUSPECTS = CASE.suspects;
+  WEAPONS = CASE.weapons;
+  PLACES = CASE.places;
+  CLUES = CASE.clues;
+  SOLUTION = CASE.solution;
+  HINTS = CASE.hints;
+  EPILOGUE_WIN = CASE.win;
+  EPILOGUE_LOSE = CASE.lose;
+}
+Object.assign(window, { CASES, applyCase });
+
 
 /* ===== ui ===== */
 /* Shared UI components & helpers */
@@ -1401,7 +1553,7 @@ function Intro({
   }, /*#__PURE__*/React.createElement("video", {
     ref: videoRef,
     className: "intro-video " + (stage === "landing" ? "dim" : ""),
-    src: "assets/intro/intro.mp4",
+    src: CASE.video,
     loop: true,
     playsInline: true,
     preload: "auto",
@@ -1416,11 +1568,11 @@ function Intro({
     className: "il-kicker"
   }, "JUEGO \xB7 RESUELVE EL CRIMEN"), /*#__PURE__*/React.createElement("div", {
     className: "il-case"
-  }, "CASO 1"), /*#__PURE__*/React.createElement("h1", {
+  }, CASE.num), /*#__PURE__*/React.createElement("h1", {
     className: "il-title"
-  }, "ASESINATO", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", null, "EN HOLLYWOOD")), /*#__PURE__*/React.createElement(Diamond, null), /*#__PURE__*/React.createElement("p", {
+  }, CASE.titleA, /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", null, CASE.titleB)), /*#__PURE__*/React.createElement(Diamond, null), /*#__PURE__*/React.createElement("p", {
     className: "il-sub"
-  }, "Una cena privada. Un invitado de honor. Un cuerpo en la ba\xF1era de m\xE1rmol."), /*#__PURE__*/React.createElement(Btn, {
+  }, CASE.sub), /*#__PURE__*/React.createElement(Btn, {
     onClick: enter,
     className: "il-enter"
   }, "\u25B6 Proyectar introducci\xF3n"), /*#__PURE__*/React.createElement("div", {
@@ -1475,7 +1627,7 @@ function Expediente({
     className: "scr-title"
   }, "La escena del crimen"), /*#__PURE__*/React.createElement("p", {
     className: "scr-lede"
-  }, "Examina a los tres sospechosos, las tres armas halladas y los tres lugares de la mansi\xF3n. Abre cada ficha, ampl\xEDa las im\xE1genes y marca a qui\xE9n sigues de cerca.")), /*#__PURE__*/React.createElement("div", {
+  }, "Examina a los tres sospechosos, las tres armas halladas y los tres lugares " + CASE.scope + ". Abre cada ficha, ampl\xEDa las im\xE1genes y marca a qui\xE9n sigues de cerca.")), /*#__PURE__*/React.createElement("div", {
     className: "exp-tabs"
   }, TABS.map(t => /*#__PURE__*/React.createElement("button", {
     key: t.id,
@@ -1668,7 +1820,7 @@ function Pistas({
     className: "cc-foot"
   }, /*#__PURE__*/React.createElement("span", {
     className: "cc-file"
-  }, "Caso 1 \u2014 Asesinato en Hollywood"), /*#__PURE__*/React.createElement("span", {
+  }, CASE.label), /*#__PURE__*/React.createElement("span", {
     className: "cc-read"
   }, read.includes(idx) ? "✓ Leída" : "Sin leer"))), /*#__PURE__*/React.createElement("button", {
     className: "clue-nav next",
@@ -1936,7 +2088,7 @@ function Veredicto({
     className: "scr-title"
   }, "Nombra al asesino"), /*#__PURE__*/React.createElement("p", {
     className: "scr-lede"
-  }, "Re\xFAne tu conclusi\xF3n: \xBFqui\xE9n cometi\xF3 el crimen, con qu\xE9 arma y en qu\xE9 lugar de la mansi\xF3n? Solo una combinaci\xF3n encaja con las cinco pistas.")), /*#__PURE__*/React.createElement("div", {
+  }, "Re\xFAne tu conclusi\xF3n: \xBFqui\xE9n cometi\xF3 el crimen, con qu\xE9 arma y en qu\xE9 lugar " + CASE.scope + "? Solo una combinaci\xF3n encaja con las cinco pistas.")), /*#__PURE__*/React.createElement("div", {
     className: "vd-grid"
   }, /*#__PURE__*/React.createElement(Column, {
     q: "\xBFQui\xE9n?",
@@ -2058,15 +2210,16 @@ Object.assign(window, {
 
 /* ===== app ===== */
 /* App shell — phase state machine, persistence, top bar */
-const STORE_KEY = "hollywood_caso1_v1";
 function loadState() {
   try {
-    return JSON.parse(localStorage.getItem(STORE_KEY)) || null;
+    return JSON.parse(localStorage.getItem(CASE.storeKey)) || null;
   } catch (e) {
     return null;
   }
 }
-function App() {
+function Game({
+  onSwitchCase
+}) {
   const saved = loadState();
   const [phase, setPhase] = useState(saved ? saved.phase : "intro");
   const [unlocked, setUnlocked] = useState(saved ? saved.unlocked : ["expediente"]);
@@ -2090,7 +2243,7 @@ function App() {
       hintsShown
     };
     try {
-      localStorage.setItem(STORE_KEY, JSON.stringify(data));
+      localStorage.setItem(CASE.storeKey, JSON.stringify(data));
     } catch (e) {}
   }, [phase, unlocked, notes, read, grid, hintsShown]);
 
@@ -2164,7 +2317,7 @@ function App() {
     setUnlocked(["expediente"]);
     setPhase("intro");
     try {
-      localStorage.removeItem(STORE_KEY);
+      localStorage.removeItem(CASE.storeKey);
     } catch (e) {}
     if (A()) A().setScene("silent");
     window.scrollTo({
@@ -2216,7 +2369,7 @@ function App() {
     className: "tb-titles"
   }, /*#__PURE__*/React.createElement("div", {
     className: "tb-case"
-  }, "CASO 1 \xB7 ASESINATO EN HOLLYWOOD"), /*#__PURE__*/React.createElement("div", {
+  }, CASE.topbar), /*#__PURE__*/React.createElement("div", {
     className: "tb-sub"
   }, "Detective L\xF3gico"))), /*#__PURE__*/React.createElement(Stepper, {
     phase: phase,
@@ -2232,7 +2385,11 @@ function App() {
     className: "icon-btn",
     onClick: restart,
     title: "Reiniciar caso"
-  }, "\u21BA"))), /*#__PURE__*/React.createElement("main", {
+  }, "\u21BA"), /*#__PURE__*/React.createElement("button", {
+    className: "icon-btn",
+    onClick: onSwitchCase,
+    title: "Cambiar de caso"
+  }, "\u2756"))), /*#__PURE__*/React.createElement("main", {
     className: "game-main"
   }, phase === "expediente" && /*#__PURE__*/React.createElement(Expediente, {
     notes: notes,
@@ -2255,7 +2412,58 @@ function App() {
     onRestart: restart
   }))));
 }
-ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(App, null));
+/* ===== case-select ===== */
+function CaseSelect({ onSelect }) {
+  const list = [CASES.caso1, CASES.caso2];
+  return /*#__PURE__*/React.createElement("div", {
+    className: "case-select"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "cs-kicker"
+  }, "JUEGO · RESUELVE EL CRIMEN"), /*#__PURE__*/React.createElement("h1", {
+    className: "cs-title"
+  }, "Elige tu caso"), /*#__PURE__*/React.createElement(Diamond, null), /*#__PURE__*/React.createElement("div", {
+    className: "cs-grid"
+  }, list.map(c => {
+    let saved = null;
+    try {
+      saved = JSON.parse(localStorage.getItem(c.storeKey));
+    } catch (e) {}
+    return /*#__PURE__*/React.createElement(Corners, {
+      key: c.id,
+      className: "cs-card"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "cs-num"
+    }, c.num), /*#__PURE__*/React.createElement("div", {
+      className: "cs-name"
+    }, c.titleA + " " + c.titleB), /*#__PURE__*/React.createElement("p", {
+      className: "cs-sub"
+    }, c.sub), /*#__PURE__*/React.createElement(Btn, {
+      onClick: () => onSelect(c.id)
+    }, saved ? "Continuar →" : "Jugar →"), /*#__PURE__*/React.createElement("div", {
+      className: "cs-progress"
+    }, saved ? "◆ Partida guardada" : " "));
+  })));
+}
+function Root() {
+  const [caseId, setCaseId] = useState(null);
+  if (caseId) applyCase(caseId);
+  if (!caseId) return /*#__PURE__*/React.createElement(CaseSelect, {
+    onSelect: id => {
+      applyCase(id);
+      setCaseId(id);
+      window.scrollTo({ top: 0 });
+    }
+  });
+  return /*#__PURE__*/React.createElement(Game, {
+    key: caseId,
+    onSwitchCase: () => {
+      setCaseId(null);
+      if (A()) A().setScene("silent");
+      window.scrollTo({ top: 0 });
+    }
+  });
+}
+ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(Root, null));
 </script>
 
 <script>

@@ -1,4 +1,8 @@
-# Resuelve el Crimen — Caso 1: Asesinato en Hollywood
+# Resuelve el Crimen — Detective Lógico
+
+**Casos disponibles:**
+- Caso 1: Asesinato en Hollywood
+- Caso 2: Y luego hubo otro
 
 Juego de deducción noir (estilo Murdle). Examina sospechosos, armas y lugares,
 lee las pistas, cruza las pruebas en el tablero de deducción y nombra al asesino.
